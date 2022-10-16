@@ -1,0 +1,30 @@
+
+****************************************DATABASE DETAILS**************************************************************************************************************************************
+CREATE TABLE Vaccination
+(
+	aadhar NUMBER(12) PRIMARY KEY REFERENCES UserData(aadhar) ON DELETE CASCADE,
+	first_vacc NUMBER(1) DEFAULT '0',
+	second_vacc NUMBER(1) DEFAULT '0',
+	third_vacc NUMBER(1) DEFAULT '0',
+	status VARCHAR2(10) DEFAULT 'NULL',
+	vacc_name VARCHAR2(10), 
+	vacc1_date date,
+	vacc2_date date,
+	vacc3_date date
+);
+
+
+INSERT INTO Vaccination VALUES(253436369985,1,1,1,'Booster','Covishield','12-Jan-2021','15-May-2021','12-APR-2022');
+
+CREATE TABLE UserData
+(
+	aadhar NUMBER(12) PRIMARY KEY,
+	first_name VARCHAR2(15),
+	last_name VARCHAR2(15),
+	dob date,
+	contact VARCHAR2(10),
+	address VARCHAR2(30)
+);
+
+
+INSERT INTO UserData VALUES(253436369985,'Sachin','Tendulkar','11-NOV-1980','9897934454','Bengaluru');
